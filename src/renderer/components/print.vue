@@ -5,7 +5,7 @@
       <webview ref="printWebview" src="../../static/print.html" nodeintegration
                style="width:280px;height:200px"></webview>
     </div>
-    <img id="barcode"/>
+    <img id="barcode" v-show="false"/>
   </div>
 
 </template>
