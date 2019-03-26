@@ -39,6 +39,12 @@
           .blank(20)
           .render()
       },
+      printMore () {
+        // 批量打印
+        for (let i = 0; i < 3; i++) {
+          this.print()
+        }
+      },
       print () {
         // 获取条形码的base64链接
         let qrImage = document.querySelector('#barcode')
@@ -49,7 +55,7 @@
 
         // 当vue节点渲染完成后，获取<webview>节点
         const webview = this.$refs.printWebview
-        console.log(webview)
+        // console.log(webview)
         // 监听<webview>里面的消息，也就是监听print.html里面的ipcRenderer.sendToHost发送的事件，当该事件发送成功后就会进入下面的回调事件中执行打印操作。
         webview.addEventListener('ipc-message', (event) => {
           console.log(event)
